@@ -1,4 +1,4 @@
-package com.spridra;
+package com.spridra.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
