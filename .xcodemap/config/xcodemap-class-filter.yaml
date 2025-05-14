@@ -1,5 +1,5 @@
 autoDetectedPackages:
-- com.spridra.cloud
+- com.spridra
 enableAutoDetect: true
 entryDisplayConfig:
   excludedPathPatterns: []
