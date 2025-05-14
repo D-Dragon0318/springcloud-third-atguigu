@@ -5,5 +5,5 @@ target/
 
 
 
-!.idea/*
-!.idea/
+.idea/*
+.idea/
