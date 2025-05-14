@@ -1,7 +1,6 @@
 package com.spridra.cloud.service;
 
 import com.spridra.cloud.entities.Pay;
-import com.spridra.cloud.entities.PayDTO;
 
 import java.util.List;
 

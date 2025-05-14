@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.spridra</groupId>
+    <groupId>com.spridra.cloud</groupId>
     <artifactId>cloud2024</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -12,6 +12,7 @@
         <module>mybatis_generator2024</module>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
+        <module>cloud-api-commons</module>
     </modules>
 
     <properties>
