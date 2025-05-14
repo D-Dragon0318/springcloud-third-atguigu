@@ -3,6 +3,7 @@ package com.spridra.cloud.controller;
 import com.spridra.cloud.entities.Pay;
 import com.spridra.cloud.entities.PayDTO;
 import com.spridra.cloud.resp.ResultData;
+import com.spridra.cloud.resp.ReturnCodeEnum;
 import com.spridra.cloud.service.IPayService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -58,8 +59,24 @@ public class PayController
     @Operation(summary = "按照ID查流水",description = "查询支付流水方法")
     public ResultData<Pay> getById(@PathVariable("id") Integer id)
     {
+        if(id < 0) throw new RuntimeException("id不能为负数");
         Pay pay = payService.getById(id);
         return ResultData.success(pay);
+    }
+
+    @RequestMapping(value = "/pay/error",method = RequestMethod.GET)
+    public ResultData<Integer> getPayError()
+    {
+        Integer i = Integer.valueOf(200);
+        try
+        {
+            System.out.println("--------come here");
+            int data = 10/0;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultData.fail(ReturnCodeEnum.RC500.getCode(),e.getMessage());
+        }
+        return ResultData.success(i);
     }
 
     @GetMapping(value = "/pay/getAll")
