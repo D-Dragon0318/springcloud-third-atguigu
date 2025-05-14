@@ -1,5 +1,8 @@
 package com.spridra.cloud.entities;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.ToString;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,6 +15,8 @@ import java.util.Date;
  * 表注释：支付交易表
 */
 @Table(name = "t_pay")
+@ToString
+@Schema(title = "支付交易表Entity")
 public class Pay {
     @Id
     @GeneratedValue(generator = "JDBC")
@@ -21,18 +26,21 @@ public class Pay {
      * 支付流水号
      */
     @Column(name = "pay_no")
+    @Schema(title = "支付流水号")
     private String payNo;
 
     /**
      * 订单流水号
      */
     @Column(name = "order_no")
+    @Schema(title = "订单流水号")
     private String orderNo;
 
     /**
      * 用户账号ID
      */
     @Column(name = "user_id")
+    @Schema(title = "用户账号ID")
     private Integer userId;
 
     /**

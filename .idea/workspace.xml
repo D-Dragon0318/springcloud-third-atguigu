@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4644ff65-0dd8-423d-aa3b-bf28dc91075a" name="更改" comment="feat: 自动生成sql">
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/Main8001.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/controller/PayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/entities/Pay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/entities/PayDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/mapper/PayMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/service/IPayService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/service/impl/IPayServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/resources/mapper/PayMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="4644ff65-0dd8-423d-aa3b-bf28dc91075a" name="更改" comment="feat: 支付服务模块搭建测试">
+      <change afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/config/Swagger3Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/Main8001.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/Main8001.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/controller/PayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/controller/PayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/entities/Pay.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/entities/Pay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/mapper/PayMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/java/com/spridra/cloud/mapper/PayMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-provider-payment8001/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis_generator2024/src/main/java/com/spridra/cloud/entities/Pay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis_generator2024/src/main/java/com/spridra/cloud/mapper/PayMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis_generator2024/src/main/java/com/spridra/cloud/mapper/PayMapper.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +94,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.cloud-provider-payment8001 [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
     "Maven.mybatis_generator2024 [org.mybatis.generator:mybatis-generator-maven-plugin:1.4.2:generate].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.Main8001.executor": "Run",
     "git-widget-placeholder": "master",
@@ -110,6 +110,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
   }
@@ -149,7 +152,7 @@
       <updated>1747122742297</updated>
       <workItem from="1747122743600" duration="5270000" />
       <workItem from="1747128844187" duration="462000" />
-      <workItem from="1747129333549" duration="4166000" />
+      <workItem from="1747129333549" duration="8069000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 初始化">
       <option name="closed" value="true" />
@@ -191,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747203215166</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: 支付服务模块搭建测试">
+      <option name="closed" value="true" />
+      <created>1747206346521</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747206346521</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +222,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: 初始化" />
     <MESSAGE value="feat: 自动生成sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 自动生成sql" />
+    <MESSAGE value="feat: 支付服务模块搭建测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 支付服务模块搭建测试" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
