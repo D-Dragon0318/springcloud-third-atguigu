@@ -38,5 +38,13 @@ public class OrderController{
         return restTemplate.getForObject(PaymentSrv_URL + "/pay/get/"+id, ResultData.class, id);
     }
 
+    @GetMapping("/consumer/pay/delete/{id}")
+    public ResultData deletePayInfo(@PathVariable("id") Integer id){
+        return restTemplate.getForObject(PaymentSrv_URL + "/pay/delete/"+id, ResultData.class, id);
+    }
+    @GetMapping("/consumer/pay/update/{id}")
+    public ResultData updatePayInfo(@PathVariable("id") Integer id){
+        return restTemplate.getForObject(PaymentSrv_URL + "/pay/update/"+id, ResultData.class, id);
+    }
 
 }
