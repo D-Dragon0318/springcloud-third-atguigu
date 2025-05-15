@@ -2,11 +2,16 @@ package com.spridra.cloud.controller;
 
 import com.spridra.cloud.entities.PayDTO;
 import com.spridra.cloud.resp.ResultData;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 /**
  * @Author: Spridra
@@ -23,6 +28,26 @@ public class OrderController{
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
+
+    @GetMapping("/consumer/discovery")
+    public Object discovery(){
+        List<String> services = discoveryClient.getServices();
+        for (String element : services) {
+            System.out.println(element);
+        }
+
+        System.out.println("===================================");
+
+        List<ServiceInstance> instances = discoveryClient.getInstances("cloud-payment-service");
+        for (ServiceInstance element : instances) {
+            System.out.println(element.getServiceId()+"\t"+element.getHost()+"\t"+element.getPort()+"\t"+element.getUri());
+        }
+
+        return instances.get(0).getServiceId()+":"+instances.get(0).getPort();
+    }
 
     /**
      * 一般情况下，通过浏览器的地址栏输入url，发送的只能是get请求
@@ -50,4 +75,9 @@ public class OrderController{
         return restTemplate.getForObject(PaymentSrv_URL + "/pay/update/"+id, ResultData.class, id);
     }
 
+    @GetMapping(value = "/consumer/pay/get/info")
+    private String getInfoByConsul()
+    {
+        return restTemplate.getForObject(PaymentSrv_URL + "/pay/get/info", String.class);
+    }
 }

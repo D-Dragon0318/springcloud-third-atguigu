@@ -16,8 +16,8 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan("com.spridra.cloud.mapper")
 @EnableDiscoveryClient
 @RefreshScope
-public class Main8001 {
+public class PayProviderMain8001 {
     public static void main(String[] args) {
-        SpringApplication.run(Main8001.class, args);
+        SpringApplication.run(PayProviderMain8001.class, args);
     }
 }

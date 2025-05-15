@@ -13,8 +13,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class Main8002 {
+public class ConsumerMain9001 {
     public static void main(String[] args) {
-        SpringApplication.run(Main8002.class, args);
+        SpringApplication.run(ConsumerMain9001.class, args);
     }
 }
