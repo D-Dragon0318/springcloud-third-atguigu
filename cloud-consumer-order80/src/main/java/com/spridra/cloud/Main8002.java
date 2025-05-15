@@ -11,8 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 */
 
 @SpringBootApplication
-public class Main80 {
+public class Main8002 {
     public static void main(String[] args) {
-        SpringApplication.run(Main80.class, args);
+        SpringApplication.run(Main8002.class, args);
     }
 }

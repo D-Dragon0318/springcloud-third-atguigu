@@ -18,6 +18,11 @@
     </properties>
 
     <dependencies>
+        <!--SpringCloud consul discovery -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.spridra.cloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
