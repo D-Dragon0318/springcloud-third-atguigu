@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author: Spridra
@@ -96,5 +97,17 @@ public class PayController
         List<Pay> payList = payService.getAll();
         log.info("查询结果：{}", payList.toString());
         return ResultData.success(payList);
+    }
+
+    @GetMapping(value = "/pay/testTimeout")
+    public ResultData<String> testTimeout()
+    {
+        try
+        {
+            TimeUnit.SECONDS.sleep(62);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ResultData.success("测试超时");
     }
 }
