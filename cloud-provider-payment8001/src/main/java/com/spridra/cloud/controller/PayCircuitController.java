@@ -24,11 +24,13 @@ public class PayCircuitController {
     @GetMapping(value = "/pay/circuit/testCircuitNumber/{id}")
     public String testCircuitNumber(@PathVariable("id") Integer id) {
         if(id < 0) throw new RuntimeException("id 不能为负数");
-        // try {
-        //     TimeUnit.SECONDS.sleep(5);
-        // } catch (InterruptedException e) {
-        //     e.printStackTrace();
-        // }
+        if(id == 999){
+            try {
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         log.info("testCircuitNumber,id = " +id);
         return "Hello, circuit! inputId:  " + " \t " + IdUtil.simpleUUID();
     }
