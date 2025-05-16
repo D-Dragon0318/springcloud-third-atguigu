@@ -23,11 +23,13 @@ spring:
           cloud-payment-service:
             connectTimeout: 1000
             readTimeout: 1000
-
       httpclient:
         hc5:
           enabled: true
-
-#        connection-timeout: 4000
-
-#
+logging:
+  level:
+    com:
+      spridra:
+        cloud:
+          apis:
+            PayFeignApi: debug
