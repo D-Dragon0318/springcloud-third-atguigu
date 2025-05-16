@@ -1,6 +1,6 @@
+
 server:
   port: 9001
-
 spring:
   application:
     name: cloud-consumer-openfeign-order
@@ -17,9 +17,17 @@ spring:
         config:
           default:
             #连接超时时间
-            connectTimeout: 3000
+            connectTimeout: 4000
             #读取超时时间
-            readTimeout: 3000
+            readTimeout: 4000
           cloud-payment-service:
             connectTimeout: 1000
             readTimeout: 1000
+
+      httpclient:
+        hc5:
+          enabled: true
+
+#        connection-timeout: 4000
+
+#
