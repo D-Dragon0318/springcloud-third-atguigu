@@ -104,7 +104,7 @@ public class PayController
     {
         try
         {
-            TimeUnit.SECONDS.sleep(62);
+            TimeUnit.SECONDS.sleep(1);
         }catch (Exception e){
             e.printStackTrace();
         }
