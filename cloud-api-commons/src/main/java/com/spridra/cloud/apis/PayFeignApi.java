@@ -48,4 +48,13 @@ public interface PayFeignApi {
 
     @GetMapping(value = "/pay/circuit/testCircuitNumber/{id}")
     String testCircuitNumber(@PathVariable("id") Integer id);
+
+    /**
+     * Resilience4j Bulkhead 的例子
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "/pay/circuit/testBulkhead/{id}")
+    String testMyBulkhead(@PathVariable("id") Integer id);
+
 }
