@@ -45,4 +45,7 @@ public interface PayFeignApi {
 
     @GetMapping(value = "/pay/testTimeout")
     ResultData testTimeout();
+
+    @GetMapping(value = "/pay/circuit/testCircuitNumber/{id}")
+    String testCircuitNumber(@PathVariable("id") Integer id);
 }
