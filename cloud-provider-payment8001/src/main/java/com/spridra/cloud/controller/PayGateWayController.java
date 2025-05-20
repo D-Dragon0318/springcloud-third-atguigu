@@ -7,7 +7,10 @@ import com.spridra.cloud.service.IPayService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 /**
  * @Author: Spridra
@@ -23,8 +26,9 @@ public class PayGateWayController
     IPayService payService;
 
     @GetMapping(value = "/pay/gateway/get/{id}")
-    public ResultData<Pay> getById(@PathVariable("id") Integer id)
+    public ResultData<Pay> getById(@PathVariable("id") Integer id,@RequestHeader Map<String, String> headers)
     {
+        headers.forEach((key, value) -> System.out.println(key + ": " + value));
         Pay pay = payService.getById(id);
         return ResultData.success(pay);
     }

@@ -4,10 +4,15 @@ import com.spridra.cloud.apis.PayFeignApi;
 import com.spridra.cloud.resp.ResultData;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Enumeration;
+import java.util.Map;
 
 /**
  * @Author: Spridra
@@ -23,8 +28,9 @@ public class OrderGatewayController {
     private PayFeignApi payFeignApi;
 
     @GetMapping(value = "/feign/pay/gateway/get/{id}")
-    public ResultData testGateway(@PathVariable("id") Integer id)
+    public ResultData testGateway(@PathVariable("id") Integer id, @RequestHeader Map<String, String> headers)
     {
+        headers.forEach((key, value) -> System.out.println(key + ": " + value));
         return payFeignApi.getById(id);
     }
     public String myGatewayFallback(Integer id,Throwable t)
