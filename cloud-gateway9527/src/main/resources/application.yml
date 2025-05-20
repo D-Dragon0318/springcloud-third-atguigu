@@ -27,7 +27,7 @@ spring:
 #            - RemoteAddr=192.168.124.1/24 # 外部访问我的IP限制，最大跨度不超过32，目前是1~24它们是 CIDR 表示法。
 #            - RemoteAddr=0:0:0:0:0:0:0:1
 #            - Method=POST
-            - My=diamond
+#            - My=diamond
 #            - name: My
 #              args:
 #                userType: diamond
@@ -44,3 +44,4 @@ spring:
           filters:
               - AddRequestHeader=X-Request-atguigu1,atguiguValue1  # 请求头kv，若一头含有多参则重写一行设置
               - AddRequestHeader=X-Request-atguigu2,atguiguValue2
+              - RemoveRequestHeader=sec-fetch-site
