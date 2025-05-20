@@ -15,6 +15,7 @@
         <module>cloud-api-commons</module>
         <module>cloud-consumer-feign-order90</module>
         <module>cloud-gateway9527</module>
+        <module>cloud-alibaba-provider-payment9001</module>
     </modules>
 
     <properties>
