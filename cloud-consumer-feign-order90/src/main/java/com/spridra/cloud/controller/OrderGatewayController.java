@@ -31,4 +31,14 @@ public class OrderGatewayController {
     {
         return "网关拦截，禁止访问/(ㄒoㄒ)/~~";
     }
+
+    @GetMapping(value = "/feign/pay/gateway/info")
+    public ResultData testGatewayInfo()
+    {
+        return payFeignApi.getGatewayInfo();
+    }
+    public String myGatewayInfoFallback(Throwable t)
+    {
+        return "网关拦截，禁止访问/(ㄒoㄒ)/~~";
+    }
 }

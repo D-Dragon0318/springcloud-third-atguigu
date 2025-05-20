@@ -18,6 +18,11 @@
     </properties>
 
     <dependencies>
+        <!--gateway-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-gateway</artifactId>-->
+<!--        </dependency>-->
         <!--micrometer-tracing指标追踪  1-->
         <dependency>
             <groupId>io.micrometer</groupId>
