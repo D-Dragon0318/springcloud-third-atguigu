@@ -16,6 +16,7 @@
         <module>cloud-consumer-feign-order90</module>
         <module>cloud-gateway9527</module>
         <module>cloud-alibaba-provider-payment9001</module>
+        <module>cloud-alibaba-consumer-nacos-order83</module>
     </modules>
 
     <properties>
