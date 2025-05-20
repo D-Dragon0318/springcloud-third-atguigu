@@ -5,6 +5,7 @@ import com.spridra.cloud.entities.Pay;
 import com.spridra.cloud.resp.ResultData;
 import com.spridra.cloud.service.IPayService;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -26,11 +27,27 @@ public class PayGateWayController
     IPayService payService;
 
     @GetMapping(value = "/pay/gateway/get/{id}")
-    public ResultData<Pay> getById(@PathVariable("id") Integer id,@RequestHeader Map<String, String> headers)
+    public ResultData<Pay> getById(@PathVariable("id") Integer id, @RequestHeader Map<String, String> headers, HttpServletRequest request)
     {
         headers.forEach((key, value) -> System.out.println(key + ": " + value));
+        String clientIP = getClientIP(request);
+        System.out.println("Client IP: " + clientIP);
         Pay pay = payService.getById(id);
         return ResultData.success(pay);
+    }
+
+    /**
+     * 获取客户端真实IP地址（处理了代理的情况）
+     */
+    private String getClientIP(HttpServletRequest request) {
+        String ip = request.getHeader("X-Forwarded-For");
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        } else if (ip.contains(",")) {
+            // X-Forwarded-For 可能包含多个IP，第一个为客户端真实IP
+            ip = ip.split(",")[0].trim();
+        }
+        return ip;
     }
 
     @GetMapping(value = "/pay/gateway/info")
