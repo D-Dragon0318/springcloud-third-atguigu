@@ -44,7 +44,8 @@ spring:
 #            - Path=/gateway/filter/** # 断言，为配合PrefixPath测试过滤，暂时注释掉/pay
 #            - Path=/fhalhfalf/abc/{segment}           # 断言，为配合SetPath测试，{segment}的内容最后被SetPath取代
           filters:
-              - AddRequestHeader=X-Request-atguigu1,atguiguValue1  # 请求头kv，若一头含有多参则重写一行设置
+            - My=spridra
+#              - AddRequestHeader=X-Request-atguigu1,atguiguValue1  # 请求头kv，若一头含有多参则重写一行设置
 #              - AddRequestHeader=X-Request-atguigu2,atguiguValue2
 #              - RemoveRequestHeader=sec-fetch-site
 #              - SetRequestHeader=change-name,spridra
