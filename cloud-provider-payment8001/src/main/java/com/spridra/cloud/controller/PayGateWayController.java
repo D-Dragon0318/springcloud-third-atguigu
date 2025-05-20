@@ -61,7 +61,7 @@ public class PayGateWayController
     @GetMapping(value = "/pay/gateway/filter")
     public ResultData<String> getGatewayFilter(HttpServletRequest request)
     {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         Enumeration<String> headers = request.getHeaderNames();
         while(headers.hasMoreElements())
         {
@@ -70,9 +70,16 @@ public class PayGateWayController
             System.out.println("请求头名: " + headName +"\t\t\t"+"请求头值: " + headValue);
             if(headName.equalsIgnoreCase("X-Request-atguigu1")
                     || headName.equalsIgnoreCase("X-Request-atguigu2")) {
-                result = result+headName + "\t " + headValue +" ";
+                result.append(headName).append("\t ").append(headValue).append(" ");
             }
         }
+        System.out.println("=============================================");
+        String customerId = request.getParameter("customerId");
+        System.out.println("request Parameter customerId: "+customerId);
+
+        String customerName = request.getParameter("customerName");
+        System.out.println("request Parameter customerName: "+customerName);
+        System.out.println("=============================================");
         return ResultData.success("getGatewayFilter 过滤器 test： "+result+" \t "+ DateUtil.now());
     }
 }

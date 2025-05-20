@@ -46,3 +46,6 @@ spring:
               - AddRequestHeader=X-Request-atguigu2,atguiguValue2
               - RemoveRequestHeader=sec-fetch-site
               - SetRequestHeader=change-name,spridra
+              - AddRequestParameter=customerId,9527001 # 新增请求参数Parameter：k ，v
+              - RemoveRequestParameter=customerName   # 删除url请求参数customerName，你传递过来也是null
+#              - SetRequestParameter=myname,spridra
