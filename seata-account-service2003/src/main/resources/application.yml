@@ -1,9 +1,9 @@
 server:
-  port: 2002
+  port: 2003
 
 spring:
   application:
-    name: seata-storage-service
+    name: seata-account-service
   cloud:
     nacos:
       discovery:
@@ -12,7 +12,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/seata_storage?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/seata_account?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
     username: root
     password: 123456
 # ========================mybatis===================
@@ -21,6 +21,9 @@ mybatis:
   type-aliases-package: com.spridra.cloud.entities
   configuration:
     map-underscore-to-camel-case: true
+
+
+
 # ========================seata===================
 seata:
   registry:
