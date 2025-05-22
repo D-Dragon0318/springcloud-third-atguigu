@@ -31,7 +31,7 @@ public class AccountServiceImpl implements AccountService
 
         accountMapper.decrease(userId,money);
 
-        //myTimeOut();
+        myTimeOut();
         //int age = 10/0;
         log.info("------->account-service中扣减账户余额结束");
     }

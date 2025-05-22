@@ -22,13 +22,16 @@ public class OrderController {
     /**
      * 创建订单
      */
-    @GetMapping("/order/create")
-    public ResultData create(@RequestParam("userId") Long userId, @RequestParam("productId") Long productId, @RequestParam("count") Integer count,@RequestParam("money") Long money) {
-        Order order = new Order();
-        order.setUserId(userId);
-        order.setProductId(productId);
-        order.setCount(count);
-        order.setMoney(money);
+    // @GetMapping("/order/create")
+    @PostMapping("/order/create")
+    // public ResultData create(@RequestParam("userId") Long userId, @RequestParam("productId") Long productId, @RequestParam("count") Integer count,@RequestParam("money") Long money) {
+    public ResultData create(@RequestBody Order order) {
+        // Order order = new Order();
+        // order.setUserId(userId);
+        // order.setProductId(productId);
+        // order.setCount(count);
+        // order.setMoney(money);
+        System.out.println(order);
         orderService.create(order);
         return ResultData.success(order);
     }
