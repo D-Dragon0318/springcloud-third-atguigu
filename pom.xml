@@ -19,6 +19,8 @@
         <module>cloud-alibaba-consumer-nacos-order83</module>
         <module>cloud-alibaba-config-nacos-client3377</module>
         <module>cloud-alibaba-sentinel-service8401</module>
+        <module>seata_mybatis_generator</module>
+        <module>seata-order-service2001</module>
     </modules>
 
     <properties>
