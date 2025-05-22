@@ -32,7 +32,7 @@ public class OrderServiceImpl implements OrderService
 
 
     @Override
-    @GlobalTransactional(name = "zzyy-create-order",rollbackFor = Exception.class) //AT
+    @GlobalTransactional(name = "spridra-create-order",rollbackFor = Exception.class) //AT
     //@GlobalTransactional @Transactional(rollbackFor = Exception.class) //XA
     public void create(Order order) {
 

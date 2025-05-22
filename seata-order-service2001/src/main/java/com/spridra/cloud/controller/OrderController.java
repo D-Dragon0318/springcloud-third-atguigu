@@ -4,8 +4,7 @@ import com.spridra.cloud.entities.Order;
 import com.spridra.cloud.resp.ResultData;
 import com.spridra.cloud.service.OrderService;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author: Spridra
@@ -24,8 +23,12 @@ public class OrderController {
      * 创建订单
      */
     @GetMapping("/order/create")
-    public ResultData create(Order order)
-    {
+    public ResultData create(@RequestParam("userId") Long userId, @RequestParam("productId") Long productId, @RequestParam("count") Integer count,@RequestParam("money") Long money) {
+        Order order = new Order();
+        order.setUserId(userId);
+        order.setProductId(productId);
+        order.setCount(count);
+        order.setMoney(money);
         orderService.create(order);
         return ResultData.success(order);
     }

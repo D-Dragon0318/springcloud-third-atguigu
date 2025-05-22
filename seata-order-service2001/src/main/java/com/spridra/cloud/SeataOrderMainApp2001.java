@@ -14,7 +14,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  */
 
 @SpringBootApplication
-@MapperScan("com.atguigu.cloud.mapper") //import tk.mybatis.spring.annotation.MapperScan;
+@MapperScan("com.spridra.cloud.mapper") //import tk.mybatis.spring.annotation.MapperScan;
 @EnableDiscoveryClient //服务注册和发现
 @EnableFeignClients
 public class SeataOrderMainApp2001

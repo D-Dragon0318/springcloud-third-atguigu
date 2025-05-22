@@ -1,6 +1,7 @@
 package com.spridra.cloud.mapper;
 
 import com.spridra.cloud.entities.Account;
+import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
 
 public interface AccountMapper extends Mapper<Account> {
